@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v4.view.ViewPager>
+    <Button
+        android:id="@+id/bt_enter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="点击进入"
+        android:textColor="#fff"
+        android:padding="15dp"
+        android:visibility="gone"
+        android:layout_marginBottom="20dp"
+        android:background="@color/material_deep_teal_200"
+        android:layout_above="@+id/linearLayout"
+        android:layout_centerHorizontal="true" />
+    <LinearLayout
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/linearLayout">
+        <ImageView android:id="@+id/img1"
+        android:src="@drawable/login_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+        <ImageView
+            android:id="@+id/img2"
+            android:src="@drawable/login_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <ImageView
+            android:id="@+id/img3"
+            android:src="@drawable/login_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+    </LinearLayout>
+</RelativeLayout>
