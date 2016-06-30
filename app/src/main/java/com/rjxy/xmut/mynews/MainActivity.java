@@ -25,31 +25,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         initData();
-
     }
-
-
-
-
     private  void initData(){
         //设置drawerLayout的事件
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
         mDrawerLayout.setDrawerListener(new DrawerLayout.DrawerListener() {
             @Override
             public void onDrawerSlide(View drawerView, float slideOffset) {
-
             }
 
             @Override
             public void onDrawerOpened(View drawerView) {
-
             }
 
             @Override
             public void onDrawerClosed(View drawerView) {
-
             }
 
             @Override

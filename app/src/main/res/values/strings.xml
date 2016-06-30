@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MyNews</string>
+    <string name="app_name">我的新闻</string>
     <string name="nav_open">开启</string>
     <string name="nav_close">关闭</string>
 </resources>

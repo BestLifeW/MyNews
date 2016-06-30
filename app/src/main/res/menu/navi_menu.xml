@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@android:drawable/ic_menu_always_landscape_portrait"
+            android:title="主页新闻" />
+        <item
+            android:id="@+id/nav_theme_post"
+            android:title="分类新闻" />
+        <item
+            android:id="@+id/nav_hot_post"
+            android:title="热门新闻" />
+    </group>
+
+    <item android:title="其他">
+        <menu>
+            <item android:id="@+id/nav_change_theme"
+                android:title="设置" />
+            <item
+                android:id="@+id/nav_about"
+                android:title="关于" />
+
+        </menu>
+    </item>
+</menu>
