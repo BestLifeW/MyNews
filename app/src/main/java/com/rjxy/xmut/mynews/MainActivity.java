@@ -1,11 +1,17 @@
 package com.rjxy.xmut.mynews;
 
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.support.v7.widget.ShareActionProvider;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -13,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
 
     private DrawerLayout mDrawerLayout;
     private Toolbar mTooblar;
-
+    private SearchView mSearchView;
+    private ShareActionProvider mShareActionProvider;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +68,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.toolbar,menu);
+        final MenuItem item1 = menu.findItem(R.id.search);
+        MenuItem item2 = menu.findItem(R.id.share);
+        mSearchView = (SearchView) MenuItemCompat.getActionView(item1);
+        mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item2);
+        return true;
+    }
 }
