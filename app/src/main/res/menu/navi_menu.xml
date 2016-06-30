@@ -3,24 +3,31 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@android:drawable/ic_menu_always_landscape_portrait"
+            android:icon="@drawable/ic_home_black_48dp"
             android:title="主页新闻" />
         <item
+            android:icon="@drawable/abc_text_cursor_mtrl_alpha"
             android:id="@+id/nav_theme_post"
             android:title="分类新闻" />
         <item
+            android:icon="@drawable/ic_home_black_48dp"
             android:id="@+id/nav_hot_post"
             android:title="热门新闻" />
     </group>
+    <group >
+            <item android:title="其他">
+                <menu>
 
-    <item android:title="其他">
-        <menu>
-            <item android:id="@+id/nav_change_theme"
-                android:title="设置" />
-            <item
-                android:id="@+id/nav_about"
-                android:title="关于" />
+                <item
+                    android:icon="@drawable/ic_home_black_48dp"
+                    android:id="@+id/nav_change_theme"
+                    android:title="设置" />
+                <item
+                    android:icon="@drawable/ic_home_black_48dp"
+                    android:id="@+id/nav_about"
+                    android:title="关于" />
 
-        </menu>
-    </item>
+                </menu>
+            </item>
+    </group>
 </menu>

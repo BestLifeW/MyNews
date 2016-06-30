@@ -14,7 +14,8 @@
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
-        android:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:popupTheme="@style/ToolbarPopupTheme"
+        app:titleTextAppearance="@style/ToolbarTitle"
         app:theme="@style/ThemeOverlay.AppCompat.ActionBar">
 
     </android.support.v7.widget.Toolbar>
@@ -29,10 +30,12 @@
         <android.support.design.widget.NavigationView
 
             android:id="@+id/navigationview"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:headerLayout="@layout/navi_header"
+            app:itemTextColor="@color/material_blue_grey_900"
+
             app:menu="@menu/navi_menu">
 
         </android.support.design.widget.NavigationView>

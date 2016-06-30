@@ -9,5 +9,14 @@
         <item name="android:textColorPrimary">@color/white</item>
     </style>
 
+
+    <style name="ToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat">
+        <item name="android:colorBackground">#F6F6F6</item>
+    </style>
+
+    <style name="ToolbarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">18sp</item>
+    </style>
+
     <color name="white">#fff</color>
 </resources>
