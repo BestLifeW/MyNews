@@ -3,27 +3,30 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
+            android:textSize="5sp"
             android:icon="@drawable/ic_home_black_48dp"
             android:title="主页新闻" />
         <item
-            android:icon="@drawable/abc_text_cursor_mtrl_alpha"
+            android:icon="@drawable/ic_supervisor_account_black_48dp"
             android:id="@+id/nav_theme_post"
+            android:textSize="16sp"
             android:title="分类新闻" />
         <item
-            android:icon="@drawable/ic_home_black_48dp"
+            android:icon="@drawable/ic_favorite_border_black_48dp"
             android:id="@+id/nav_hot_post"
-            android:title="热门新闻" />
+            android:textSize="112sp"
+            android:title="收藏" />
     </group>
     <group >
             <item android:title="其他">
                 <menu>
 
                 <item
-                    android:icon="@drawable/ic_home_black_48dp"
+                    android:icon="@drawable/ic_settings_applications_black_48dp"
                     android:id="@+id/nav_change_theme"
                     android:title="设置" />
                 <item
-                    android:icon="@drawable/ic_home_black_48dp"
+                    android:icon="@drawable/abc_ic_menu_moreoverflow_mtrl_alpha"
                     android:id="@+id/nav_about"
                     android:title="关于" />
 
