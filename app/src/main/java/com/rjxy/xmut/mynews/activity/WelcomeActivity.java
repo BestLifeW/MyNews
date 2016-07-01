@@ -1,4 +1,4 @@
-package com.rjxy.xmut.mynews;
+package com.rjxy.xmut.mynews.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Bundle;
+
+import com.rjxy.xmut.mynews.R;
 
 public class WelcomeActivity extends Activity {
 

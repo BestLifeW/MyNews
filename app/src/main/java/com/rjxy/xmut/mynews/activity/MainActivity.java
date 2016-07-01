@@ -1,9 +1,7 @@
-package com.rjxy.xmut.mynews;
+package com.rjxy.xmut.mynews.Activity;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
@@ -19,8 +17,10 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.rjxy.xmut.mynews.Adatper.FragViewAdapter;
+import com.rjxy.xmut.mynews.R;
 import com.rjxy.xmut.mynews.fragment.Tab_Fragment_1;
 import com.rjxy.xmut.mynews.fragment.Tab_Fragment_2;
+import com.rjxy.xmut.mynews.fragment.Tab_Fragment_3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,12 +53,14 @@ public class MainActivity extends AppCompatActivity {
 
             fragmentsList.add(new Tab_Fragment_1());
             fragmentsList.add(new Tab_Fragment_2());
+             fragmentsList.add(new Tab_Fragment_3());
            //将fragment添加到fragmentList的list容器里
-            for (int i = 0; i < 2; i++) { //重复添加 只是填充  没什么用
-                fragmentsList.add(new Tab_Fragment_1());
-            }
+//            for (int i = 0; i < 2; i++) { //重复添加 只是填充  没什么用
+//                fragmentsList.add(new Tab_Fragment_1());
+//            }
             titleList.add("新闻");
             titleList.add("体育");
+            titleList.add("娱乐");
 
             tabLayout.setTabMode(TabLayout.MODE_FIXED);//tab的模式如果标签多的话用MODE_SCROLLABLE  少的话用MODE_FIXED
             //tabLayout.setBackgroundColor(Color.BLUE);

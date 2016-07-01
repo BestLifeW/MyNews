@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.rjxy.xmut.mynews.WelcomeActivity">
+    tools:context=".Activity.WelcomeActivity">
     <ImageView
         android:background="@drawable/welcome"
         android:layout_width="match_parent"

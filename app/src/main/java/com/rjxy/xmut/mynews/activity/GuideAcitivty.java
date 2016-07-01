@@ -1,4 +1,4 @@
-package com.rjxy.xmut.mynews;
+package com.rjxy.xmut.mynews.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.rjxy.xmut.mynews.R;
+
 import java.util.ArrayList;
 
 public class GuideAcitivty extends Activity {
