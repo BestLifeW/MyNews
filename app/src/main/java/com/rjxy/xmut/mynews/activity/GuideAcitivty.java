@@ -20,6 +20,7 @@ public class GuideAcitivty extends Activity {
     private ImageView imageViews [];
     private int Pointview[];
     private Button bt_enter;
+    //jzheg
     //引导页图片Id
     private int[] mImageIds = new int[]{R.drawable.guide_1,
             R.drawable.guide_2, R.drawable.guide_3};
