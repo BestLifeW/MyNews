@@ -1,4 +1,4 @@
-package com.rjxy.xmut.mynews.Activity;
+package com.rjxy.xmut.mynews.activity;
 
 import android.app.Activity;
 import android.content.Intent;
