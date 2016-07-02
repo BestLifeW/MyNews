@@ -1,4 +1,4 @@
-package com.rjxy.xmut.mynews.activity;
+package com.rjxy.xmut.mynews.Activity;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
