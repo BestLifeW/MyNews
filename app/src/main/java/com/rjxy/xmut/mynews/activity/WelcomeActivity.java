@@ -40,6 +40,7 @@ public class WelcomeActivity extends Activity {
 //            SharedPreferences.Editor editor=preferences.edit();
 //            editor.putBoolean("isFirstIn",false);
 //            editor.commit();
+            //上面的方法用下面一句话替代
             PrefUtils.setBoolean(getApplicationContext(),"isFirstIn",false);
         }else {
             handler.sendEmptyMessageDelayed(GOHOME,2000);
