@@ -35,7 +35,7 @@ import java.util.List;
         return titleList.get(position);
     }
 
-    @Override//销毁 不知道这样做行不行
+    @Override//销毁
     public void destroyItem(ViewGroup container, int position, Object object) {
         super.destroyItem(container, position, object);
         fragmentList.get(position).onDestroy();
