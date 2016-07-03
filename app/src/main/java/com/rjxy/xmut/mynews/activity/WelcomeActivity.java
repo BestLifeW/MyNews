@@ -32,6 +32,8 @@ public class WelcomeActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
+
+
         boolean isFirstIn = PrefUtils.getBoolean(getApplicationContext(), "isFirstIn", true);
         //SharedPreferences preferences = getSharedPreferences("hhj", MODE_PRIVATE);
        // isFirstIn=preferences.getBoolean("isFirstIn",true);

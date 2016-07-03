@@ -24,4 +24,13 @@ public class Tab_Fragment_1 extends Fragment {
         View viewTab_1 = inflater.inflate(R.layout.fragment_content1, container, false);
         return viewTab_1;
     }
+
+    public static Tab_Fragment_1 newInstance() {
+        
+        Bundle args = new Bundle();
+        
+        Tab_Fragment_1 fragment = new Tab_Fragment_1();
+        fragment.setArguments(args);
+        return fragment;
+    }
 }

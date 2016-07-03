@@ -22,6 +22,13 @@ public class Tab_Fragment_3 extends Fragment {
         return viewTab_3;
     }
 
-
+    public static Tab_Fragment_3 newInstance() {
+        
+        Bundle args = new Bundle();
+        
+        Tab_Fragment_3 fragment = new Tab_Fragment_3();
+        fragment.setArguments(args);
+        return fragment;
+    }
 
 }

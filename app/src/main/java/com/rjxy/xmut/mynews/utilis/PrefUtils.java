@@ -5,16 +5,17 @@ import android.content.SharedPreferences;
 
 /**
  *
- * 对s
+ * 对SharedPreferences 的分装
  */
-public class PrefUtils {
+public class  PrefUtils {
+
     public static boolean getBoolean(Context context,String key,boolean defValue ){
         SharedPreferences sp = context.getSharedPreferences("config", Context.MODE_PRIVATE);
         return sp.getBoolean(key,defValue);
     }
     public static void setBoolean(Context context,String key,boolean Value ){
         SharedPreferences sp = context.getSharedPreferences("config", Context.MODE_PRIVATE);
-        sp.edit().putBoolean(key,Value).commit();
+        sp.edit().putBoolean(key,Value).apply();
     }
     public static String getString(Context context,String key,String defValue ){
         SharedPreferences sp = context.getSharedPreferences("config", Context.MODE_PRIVATE);
@@ -22,7 +23,7 @@ public class PrefUtils {
     }
     public static void setString(Context context,String key,String Value ){
         SharedPreferences sp = context.getSharedPreferences("config", Context.MODE_PRIVATE);
-        sp.edit().putString(key,Value).commit();
+        sp.edit().putString(key,Value).apply();
     }
 
     public static int getInt(Context context,String key,int defValue ){
@@ -31,6 +32,6 @@ public class PrefUtils {
     }
     public static void setInt(Context context,String key,int Value ){
         SharedPreferences sp = context.getSharedPreferences("config", Context.MODE_PRIVATE);
-        sp.edit().putInt(key,Value).commit();
+        sp.edit().putInt(key,Value).apply();
     }
 }
