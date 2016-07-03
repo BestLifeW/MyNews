@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
             fragmentsList.add(new Tab_Fragment_1());
             fragmentsList.add(new Tab_Fragment_2());
-             fragmentsList.add(new Tab_Fragment_3());
+            fragmentsList.add(new Tab_Fragment_3());
            //将fragment添加到fragmentList的list容器里
 //            for (int i = 0; i < 2; i++) { //重复添加 只是填充  没什么用
 //                fragmentsList.add(new Tab_Fragment_1());
