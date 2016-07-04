@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -39,6 +41,8 @@ public class Tab_Fragment_1 extends Fragment {
     public  RecyclerView recyclerView;
     public  View view;
     public  LatestDomain latestDomain;
+    public SwipeRefreshLayout mSwipeRefreshLayout;
+    public CardView cardView;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -79,6 +83,8 @@ public class Tab_Fragment_1 extends Fragment {
         recyclerView.addItemDecoration(new SpaceItemDecoration(spacingInPixels));
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(manager);
+        //设置下拉刷新
+        mSwipeRefreshLayout  = (SwipeRefreshLayout) view.findViewById(R.id.srl);
     }
 
     public static Tab_Fragment_1 newInstance() {

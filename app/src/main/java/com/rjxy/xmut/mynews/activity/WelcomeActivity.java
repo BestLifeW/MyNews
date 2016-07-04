@@ -82,6 +82,7 @@ public class WelcomeActivity extends Activity {
         String cachePath = cacheDir.getPath() + "/";
         final BitmapUtils bitmapUtils = new BitmapUtils(getApplicationContext(), cachePath);
         BitmapDisplayConfig bigPicDisplayConfig = new BitmapDisplayConfig();
+
         AlphaAnimation animation = new AlphaAnimation(0.1f, 1.0f);
         animation.setDuration(1000);
         bigPicDisplayConfig.setAnimation(animation);
@@ -97,7 +98,6 @@ public class WelcomeActivity extends Activity {
         }
 
     }
-
     /*
     * 获取网络数据，并用Gson解析;
     *
@@ -111,7 +111,6 @@ public class WelcomeActivity extends Activity {
                 ProcessResult(result);
                 CacheUtils.setCache(API.START_IMAGE, result, getApplicationContext());
             }
-
             @Override
             public void onFailure(HttpException error, String msg) {
                 Toast.makeText(WelcomeActivity.this, "发现网络连接失败,请检查网络", Toast.LENGTH_SHORT).show();

@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentsList.add(Tab_Fragment_2.newInstance());
         fragmentsList.add(Tab_Fragment_1.newInstance());
 
-        titleList.add("热门新闻");
+        titleList.add("知乎热门");
         titleList.add("体育");
         titleList.add("娱乐");
 
