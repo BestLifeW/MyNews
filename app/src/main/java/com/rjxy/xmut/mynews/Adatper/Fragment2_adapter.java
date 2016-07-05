@@ -17,47 +17,47 @@ import com.rjxy.xmut.mynews.domain.ThemesDomain;
 /**
  * Created by Administrator on 2016/7/4.
  */
-public class Fragment2_adapter extends RecyclerView.Adapter<Fragment2_adapter.ThemesItemViewHolder>{
+public class Fragment2_adapter extends RecyclerView.Adapter<Fragment2_adapter.ThemesItemViewHolder> {
 
     private Context context;
     private ThemesDomain themesDomain;
     private BitmapUtils bitmapUtils;
 
-    public Fragment2_adapter(Context context,ThemesDomain themesDomain ){
-        this.context=context;
-        this.themesDomain=themesDomain;
+    public Fragment2_adapter(Context context, ThemesDomain themesDomain) {
+        this.context = context;
+        this.themesDomain = themesDomain;
     }
 
     @Override
     public ThemesItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        bitmapUtils=new BitmapUtils(context);
-        View view=View.inflate(context, R.layout.recyclerview_item,null);
-        ThemesItemViewHolder Holder=new ThemesItemViewHolder(view);
+        bitmapUtils = new BitmapUtils(context);
+        View view = View.inflate(context, R.layout.recyclerview_item, null);
+        ThemesItemViewHolder Holder = new ThemesItemViewHolder(view);
         return Holder;
     }
 
     @Override
     public void onBindViewHolder(ThemesItemViewHolder holder, int position) {
-          final int i=position;
-          String imgUrl=themesDomain.getOthers().get(position).getThumbnail();
-          holder.NewsTitle.setText(themesDomain.getOthers().get(position).getDescription());
-          bitmapUtils.display(holder.NewsImg,imgUrl);
+        final int i = position;
+        String imgUrl = themesDomain.getOthers().get(position).getThumbnail();
+        holder.NewsTitle.setText(themesDomain.getOthers().get(position).getDescription());
+        bitmapUtils.display(holder.NewsImg, imgUrl);
         //设置点击时间
-        holder.cardView.setOnClickListener(new View.OnClickListener(){
+        holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
-        Log.i("imgUrl", "onBindViewHolder: "+imgUrl);
+        Log.i("imgUrl", "onBindViewHolder: " + imgUrl);
     }
-
 
     @Override
     public int getItemCount() {
-        return 0;
+        return themesDomain.getOthers().size();
     }
-    public class ThemesItemViewHolder extends RecyclerView.ViewHolder{
+
+    public class ThemesItemViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView NewsImg;
         private TextView NewsTitle;

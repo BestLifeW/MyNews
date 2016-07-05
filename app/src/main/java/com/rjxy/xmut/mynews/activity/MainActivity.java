@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentsList.add(Tab_Fragment_3.newInstance());
 
         titleList.add("知乎热门");
-        titleList.add("体育");
+        titleList.add("主题日报");
         titleList.add("娱乐");
 
         tabLayout.setTabMode(TabLayout.MODE_FIXED);//tab的模式如果标签多的话用MODE_SCROLLABLE  少的话用MODE_FIXED

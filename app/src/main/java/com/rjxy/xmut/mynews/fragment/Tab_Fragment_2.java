@@ -43,7 +43,6 @@ public class Tab_Fragment_2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         viewTab_2 = inflater.inflate(R.layout.fragment_content2, container, false);
-
         initView();
         initInterData();
         return viewTab_2;

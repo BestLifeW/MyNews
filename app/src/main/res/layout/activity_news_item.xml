@@ -1,32 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lr"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/lr"
-    android:orientation="vertical">
+    android:fitsSystemWindows="true">
 
-    <android.support.v7.widget.Toolbar
-
-        android:id="@+id/item_tl"
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        app:popupTheme="@style/ToolbarPopupTheme"
-        app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:titleTextAppearance="@style/ToolbarTitle">
+        android:layout_height="240dp"
+        android:fitsSystemWindows="true">
 
-    </android.support.v7.widget.Toolbar>
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:clickable="true"
-        android:foreground="?android:attr/selectableItemBackground"
-        app:cardCornerRadius="3dp"
-        app:cardElevation="8dp">
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:contentScrim="@color/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlwaysCollapsed">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+
+                <ImageView
+                    android:id="@+id/head_img"
+                    android:src="@drawable/nav_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+
+                <TextView
+                    android:id="@+id/tv_copyright"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+
+
+            <android.support.v7.widget.Toolbar
+
+                android:id="@+id/item_tl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                app:popupTheme="@style/ToolbarPopupTheme"
+                app:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+                app:titleTextAppearance="@style/ToolbarTitle">
+
+            </android.support.v7.widget.Toolbar>
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -51,27 +83,38 @@
                 android:layout_marginTop="120dp"
                 android:gravity="center"
                 android:padding="5dp"
-                android:text="这是标题啦"
+                android:text=""
                 android:textColor="#fff"
                 android:textSize="20sp" />
 
             <android.support.v4.widget.NestedScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_below="@+id/news_header"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="46dp">
 
                 <WebView
                     android:id="@+id/item_newsinfo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_below="@+id/news_header"
-                    android:lineSpacingExtra="5dp"
-                    />
+                    android:lineSpacingExtra="5dp" />
             </android.support.v4.widget.NestedScrollView>
         </RelativeLayout>
 
 
-    </android.support.v7.widget.CardView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
+        android:src="@drawable/share"
+        app:backgroundTint="@color/colorPrimary"/>
 
 
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
