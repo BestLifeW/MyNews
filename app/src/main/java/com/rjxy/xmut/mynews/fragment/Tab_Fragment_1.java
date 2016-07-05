@@ -40,7 +40,7 @@ public class Tab_Fragment_1 extends Fragment {
 
 
     public RecyclerView recyclerView;
-    public View view;
+    public View  view;
     public LatestDomain latestDomain;
     public SwipeRefreshLayout mSwipeRefreshLayout;
     public CardView cardView;
