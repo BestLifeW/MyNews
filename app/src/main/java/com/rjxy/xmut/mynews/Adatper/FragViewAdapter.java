@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by lovec on 2016/7/1.
  */
- public class FragViewAdapter extends FragmentPagerAdapter {
+public class FragViewAdapter extends FragmentPagerAdapter {
     List<Fragment> fragmentList;
     List<String> titleList;
 
@@ -35,9 +35,9 @@ import java.util.List;
         return titleList.get(position);
     }
 
-    @Override//销毁
-    public void destroyItem(ViewGroup container, int position, Object object) {
-        super.destroyItem(container, position, object);
-        fragmentList.get(position).onDestroy();
-    }
+    //  @Override//销毁
+//    public void destroyItem(ViewGroup container, int position, Object object) {
+//        super.destroyItem(container, position, object);
+//        //fragmentList.get(position).onDestroy();
+//        container.removeView(fragmentList.getv);
 }

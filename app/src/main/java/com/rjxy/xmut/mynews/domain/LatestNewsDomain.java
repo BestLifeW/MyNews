@@ -13,16 +13,9 @@ public class LatestNewsDomain {
      <div class="headline">
 
      <div class="img-place-holder"></div>
-
-
-
      </div>
 
      <div class="content-inner">
-
-
-
-
      <div class="question">
      <h2 class="question-title">如何看待《自杀专卖店》结局？</h2>
 
@@ -32,7 +25,6 @@ public class LatestNewsDomain {
      <img class="avatar" src="http://pic1.zhimg.com/ba9df171bc7f324f6ea0ec7e3238e720_is.jpg">
      <span class="author">资博，</span><span class="bio">学食品的</span>
      </div>
-
      <div class="content">
      <p>在 2012 年法国戛纳电影节上映的动画影片里，《自杀专卖店》是相当吸引我的一部。</p>
      <p>如果只看故事本身，或只是略有新颖点的黑色幽默片：在一个自杀成为主流的世界里，一家祖传 10 代的夫妻老婆店，贩卖各种能帮人自杀的工具（因为在街上自杀是非法的，需要支付罚款，如果人死无财则家人连坐）。而自杀店家族里面唯一一个会笑的儿子阿伦出生后，变化悄生：阿伦帮助厌恶自身的姐姐玛丽莲重拾自信，找到自己的真命天子，帮父亲三岛和母亲 Lucrece 走出了因从事这个职业而自责的泥淖，帮自己的哥哥梵高找回社交的自信，而最终，自杀专卖店成了人们重拾自信的幸福可丽饼店。</p>

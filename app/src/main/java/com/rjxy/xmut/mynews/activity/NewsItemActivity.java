@@ -1,12 +1,16 @@
 package com.rjxy.xmut.mynews.activity;
 
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
+import android.view.View;
 import android.webkit.WebView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,7 +34,7 @@ public class NewsItemActivity extends AppCompatActivity {
     private int newsId;
     private WebView webViewRead;
     private LatestNewsDomain newsList;
-
+    private LinearLayout lr;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +49,7 @@ public class NewsItemActivity extends AppCompatActivity {
     private void initView() {
         mItemTitle = (TextView) findViewById(R.id.item_title); //新闻标题
         webViewRead = (WebView) findViewById(R.id.item_newsinfo);//新闻文章
+        lr = (LinearLayout) findViewById(R.id.lr);
         // mItemImg = (ImageView) findViewById(R.id.item_newimg);//新闻图片
         mTooblar = (Toolbar) findViewById(R.id.item_tl);
 
@@ -64,7 +69,7 @@ public class NewsItemActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(HttpException error, String msg) {
-                Toast.makeText(NewsItemActivity.this, "连接失败啦！", Toast.LENGTH_SHORT).show();
+                Snackbar.make(lr,"请检查网络连接",Snackbar.LENGTH_LONG).show();
             }
         });
     }
@@ -72,13 +77,13 @@ public class NewsItemActivity extends AppCompatActivity {
     private void processData(String result) {
         Gson gson = new Gson();
         newsList = gson.fromJson(result, LatestNewsDomain.class);
-        Log.i("解析后的数据为", newsList.getBody());
+       // Log.i("解析后的数据为", newsList.getBody());
 
         fillData();
     }
 
     private void fillData() {
-       // mItemTitle.setText(newsList.getTitle());
+        // mItemTitle.setText(newsList.getTitle());
         //以下填充的是来自json返回的网页内容
         mTooblar.setTitle(newsList.getTitle());
         String css = "<link rel=\"stylesheet\" href=\"file:///android_asset/zhihu_master.css\" type=\"text/css\">";
@@ -94,5 +99,15 @@ public class NewsItemActivity extends AppCompatActivity {
                 + content
                 + "</body></html>";
         webViewRead.loadDataWithBaseURL("x-data://base", html, "text/html", "utf-8", null);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // TODO Auto-generated method stub
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
