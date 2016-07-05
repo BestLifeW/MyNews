@@ -47,7 +47,7 @@ public class NewsItemActivity extends AppCompatActivity {
 
     //初始化布局
     private void initView() {
-        mItemTitle = (TextView) findViewById(R.id.item_title); //新闻标题
+       // mItemTitle = (TextView) findViewById(R.id.item_title); //新闻标题
         webViewRead = (WebView) findViewById(R.id.item_newsinfo);//新闻文章
         lr = (LinearLayout) findViewById(R.id.lr);
         // mItemImg = (ImageView) findViewById(R.id.item_newimg);//新闻图片
