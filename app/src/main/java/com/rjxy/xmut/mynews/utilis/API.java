@@ -16,5 +16,6 @@ public class API {
 
     //这是主题日报的API
     public static final String THEME = "http://news-at.zhihu.com/api/4/themes";
+    public static final String Themes_NEW = "http://news-at.zhihu.com/api/4/news/";
 
 }
