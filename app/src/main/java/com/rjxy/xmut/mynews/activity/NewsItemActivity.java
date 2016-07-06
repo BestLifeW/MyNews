@@ -37,7 +37,6 @@ public class NewsItemActivity extends AppCompatActivity {
     private ImageView mItemImg;     //图片
     private TextView mItenmInfo;
     private WebView webViewRead;
-    private LatestNewsDomain newsList;
     private CoordinatorLayout coordinatorLayout;
     private FloatingActionButton fab;
     private Toolbar toolbar;
@@ -74,9 +73,10 @@ public class NewsItemActivity extends AppCompatActivity {
                 ProcessData(result);
                 fillData();
             }
+
             @Override
             public void onFailure(HttpException error, String msg) {
-                Snackbar.make(coordinatorLayout,"网络连接失败",Snackbar.LENGTH_LONG).show();
+                Snackbar.make(coordinatorLayout, "网络连接失败", Snackbar.LENGTH_LONG).show();
             }
         });
     }
@@ -135,6 +135,16 @@ public class NewsItemActivity extends AppCompatActivity {
 
         //设置页面的标题
         setCollapsingToolbarLayoutTitle();
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //这是分享按钮！
+                Intent shareIntent = new Intent().setAction(Intent.ACTION_SEND).setType("text/plain");
+                String shareText = "新闻标题" + latestNewsDomain.getTitle() + "," + latestNewsDomain.getShare_url() + "(来自我的新闻)";
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareText);
+                startActivity(Intent.createChooser(shareIntent, "分享至"));
+            }
+        });
     }
 
     /*
@@ -160,16 +170,7 @@ public class NewsItemActivity extends AppCompatActivity {
         webViewRead = (WebView) findViewById(R.id.item_newsinfo);
         webViewRead.setScrollbarFadingEnabled(true);
         //设置分享按钮点击
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //这是分享按钮！
-                Intent shareIntent = new Intent().setAction(Intent.ACTION_SEND).setType("text/plain");
-                String shareText = "新闻标题" + newsList.getTitle() + "," + newsList.getShare_url() + "(来自我的新闻)";
-                shareIntent.putExtra(Intent.EXTRA_TEXT, shareText);
-                startActivity(Intent.createChooser(shareIntent, "分享至"));
-            }
-        });
+
     }
 
     private void changeThemes() {
@@ -213,6 +214,7 @@ public class NewsItemActivity extends AppCompatActivity {
         toolbarLayout.setExpandedTitleTextAppearance(R.style.ExpandedAppBarPlus1);
         toolbarLayout.setCollapsedTitleTextAppearance(R.style.CollapsedAppBarPlus1);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // TODO Auto-generated method stub
