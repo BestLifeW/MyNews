@@ -54,6 +54,7 @@ public class SettingActivity extends AppCompatActivity {
         mTooblar = (Toolbar) findViewById(R.id.tl_custom);
         setSupportActionBar(mTooblar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //wzy
         getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         mTooblar.setTitle("设置");
