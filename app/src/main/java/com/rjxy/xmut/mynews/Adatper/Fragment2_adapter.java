@@ -1,6 +1,7 @@
 package com.rjxy.xmut.mynews.Adatper;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.lidroid.xutils.BitmapUtils;
 import com.rjxy.xmut.mynews.R;
+import com.rjxy.xmut.mynews.activity.NewsItemActivity;
 import com.rjxy.xmut.mynews.domain.LatestDomain;
 import com.rjxy.xmut.mynews.domain.ThemesDomain;
 
@@ -37,7 +39,7 @@ public class Fragment2_adapter extends RecyclerView.Adapter<Fragment2_adapter.Th
     }
 
     @Override
-    public void onBindViewHolder(ThemesItemViewHolder holder, int position) {
+    public void onBindViewHolder(ThemesItemViewHolder holder, final int position) {
         final int i = position;
         String imgUrl = themesDomain.getOthers().get(position).getThumbnail();
         holder.NewsTitle.setText(themesDomain.getOthers().get(position).getDescription());
@@ -46,6 +48,9 @@ public class Fragment2_adapter extends RecyclerView.Adapter<Fragment2_adapter.Th
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(context, NewsItemActivity.class);
+                intent.putExtra("News", themesDomain.getOthers().get(position).getId());
+                context.startActivity(intent);
 
             }
         });

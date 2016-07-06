@@ -1,5 +1,6 @@
 package com.rjxy.xmut.mynews.fragment;
 
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Process;
 import android.support.annotation.Nullable;
@@ -38,7 +39,7 @@ public class Tab_Fragment_2 extends Fragment {
     private ThemesDomain themesDomain;
     private RecyclerView recyclerView;
     private View viewTab_2;
-
+    public SwipeRefreshLayout mSwipeRefreshLayout;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -55,7 +56,7 @@ public class Tab_Fragment_2 extends Fragment {
             public void onSuccess(ResponseInfo<String> responseInfo) {
                 String result = responseInfo.result;
                 ProcessResult(result);
-                Log.i("News", themesDomain.getOthers().get(0).getDescription());
+                //Log.i("News", themesDomain.getOthers().get(0).getDescription());
                 CacheUtils.setCache(API.LATEST, result, getActivity());
             }
             @Override
@@ -76,19 +77,19 @@ public class Tab_Fragment_2 extends Fragment {
         recyclerView = (RecyclerView) viewTab_2.findViewById(R.id.rl_fragment2);
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         int spacingInPixels = 20;
-        //recyclerView.addItemDecoration(new SpaceItemDecoration(spacingInPixels));
+        recyclerView.addItemDecoration(new SpaceItemDecoration(spacingInPixels));
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(manager);
         //设置下拉刷新
-//        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.srl);
-//        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//            @Override
-//            public void onRefresh() {
-//                iniInterData();
-//                recyclerView.setAdapter(new Fragment1_adapter(getActivity(), latestDomain));
-//                mSwipeRefreshLayout.setRefreshing(false);
-//            }
-//        });
+        mSwipeRefreshLayout = (SwipeRefreshLayout) viewTab_2.findViewById(R.id.srl);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                initInterData();
+                recyclerView.setAdapter(new Fragment2_adapter(getActivity(), themesDomain));
+                mSwipeRefreshLayout.setRefreshing(false);
+            }
+        });
     }
 
     public static Tab_Fragment_2 newInstance() {
@@ -98,6 +99,23 @@ public class Tab_Fragment_2 extends Fragment {
         Tab_Fragment_2 fragment = new Tab_Fragment_2();
         fragment.setArguments(args);
         return fragment;
+    }
+
+
+    public class SpaceItemDecoration extends RecyclerView.ItemDecoration {
+
+        private int space;
+
+        public SpaceItemDecoration(int space) {
+            this.space = space;
+        }
+
+        @Override
+        public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+
+            if (parent.getChildPosition(view) != 0)
+                outRect.top = space;
+        }
     }
 
 }
