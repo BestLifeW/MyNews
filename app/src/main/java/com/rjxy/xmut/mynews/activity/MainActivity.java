@@ -1,5 +1,7 @@
 package com.rjxy.xmut.mynews.activity;
 
+import android.content.Intent;
+import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.MenuItemCompat;
@@ -23,6 +25,7 @@ import com.rjxy.xmut.mynews.R;
 import com.rjxy.xmut.mynews.fragment.Tab_Fragment_1;
 import com.rjxy.xmut.mynews.fragment.Tab_Fragment_2;
 import com.rjxy.xmut.mynews.fragment.Tab_Fragment_3;
+import com.rjxy.xmut.mynews.utilis.PrefUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,10 +41,43 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar mTooblar;
     private SearchView mSearchView;
     private ShareActionProvider mShareActionProvider;
+    NavigationView mNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        String theme = PrefUtils.getString(this, "theme", "");
+        if (!"".equals(theme)) {
+            switch (theme){
+                case "1":
+                    setTheme(R.style.AppTheme1);
+                    break;
+                case "2":
+                    setTheme(R.style.AppTheme2);
+                    break;
+                case "3":
+                    setTheme(R.style.AppTheme3);
+                    break;
+                case "4":
+                    setTheme(R.style.AppTheme4);
+                    break;
+                case "5":
+                    setTheme(R.style.AppTheme5);
+                    break;
+                case "6":
+                    setTheme(R.style.AppTheme6);
+                    break;
+                case "7":
+                    setTheme(R.style.AppTheme7);
+                    break;
+                case "8":
+                    setTheme(R.style.AppTheme8);
+                    break;
+                default:
+                    break;
+            }
+        }
         setContentView(R.layout.activity_main);
         initData();
         initFragment();
@@ -59,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentsList.add(Tab_Fragment_3.newInstance());
 
         titleList.add("知乎热门");
-        titleList.add("主题日报");
+        titleList.add("体育");
         titleList.add("娱乐");
 
         tabLayout.setTabMode(TabLayout.MODE_FIXED);//tab的模式如果标签多的话用MODE_SCROLLABLE  少的话用MODE_FIXED
@@ -100,7 +136,27 @@ public class MainActivity extends AppCompatActivity {
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mTooblar, R.string.nav_open, R.string.nav_close);
         actionBarDrawerToggle.syncState();
         mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
+        mNavigationView = (NavigationView) mDrawerLayout.findViewById(R.id.navigationview);
+        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+
+                switch (menuItem.getItemId()) {
+                    case R.id.nav_change_theme:
+                        Intent intent = new Intent();
+                        intent.setClass(MainActivity.this, SettingActivity.class);
+                        startActivity(intent);
+                        break;
+                    default:
+                        break;
+                }
+
+                return true;
+            }
+        });
+
     }
+
 
     //这是测试
     @Override

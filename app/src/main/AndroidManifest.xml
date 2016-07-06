@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".activity.GuideAcitivty"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"></activity>
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
         <activity
             android:name=".activity.WelcomeActivity"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
@@ -24,8 +24,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MainActivity"></activity>
-        <activity android:name=".activity.NewsItemActivity"></activity>
+        <activity android:name=".activity.MainActivity" />
+        <activity android:name=".activity.NewsItemActivity" />
+        <activity android:name=".activity.SettingActivity"></activity>
     </application>
 
 </manifest>

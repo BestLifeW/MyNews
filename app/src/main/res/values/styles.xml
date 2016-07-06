@@ -8,6 +8,62 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/white</item>
     </style>
+    <style name="AppTheme1" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#FF6347</item>
+        <item name="colorPrimaryDark">#FF6347</item>
+        <item name="colorAccent">#FF6347</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+    <style name="AppTheme2" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#FFE4C4</item>
+        <item name="colorPrimaryDark">#FFE4C4</item>
+        <item name="colorAccent">#FFE4C4</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+    <style name="AppTheme3" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#DAA520</item>
+        <item name="colorPrimaryDark">#DAA520</item>
+        <item name="colorAccent">#DAA520</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+    <style name="AppTheme4" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#EE82EE</item>
+        <item name="colorPrimaryDark">#EE82EE</item>
+        <item name="colorAccent">#EE82EE</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+    <style name="AppTheme5" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#DCDCDC</item>
+        <item name="colorPrimaryDark">#DCDCDC</item>
+        <item name="colorAccent">#DCDCDC</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+    <style name="AppTheme6" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#D2B48C</item>
+        <item name="colorPrimaryDark">#D2B48C</item>
+        <item name="colorAccent">#D2B48C</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+    <style name="AppTheme7" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#9370DB</item>
+        <item name="colorPrimaryDark">#9370DB</item>
+        <item name="colorAccent">#9370DB</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+    <style name="AppTheme8" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#3CB371</item>
+        <item name="colorPrimaryDark">#3CB371</item>
+        <item name="colorAccent">#3CB371</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
 
 
     <style name="ToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat">
