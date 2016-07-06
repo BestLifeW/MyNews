@@ -16,6 +16,37 @@ public class SettingActivity extends AppCompatActivity {
     private Toolbar mTooblar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        String theme = PrefUtils.getString(this, "theme", "");
+        if (!"".equals(theme)) {
+            switch (theme){
+                case "1":
+                    setTheme(R.style.AppTheme1);
+                    break;
+                case "2":
+                    setTheme(R.style.AppTheme2);
+                    break;
+                case "3":
+                    setTheme(R.style.AppTheme3);
+                    break;
+                case "4":
+                    setTheme(R.style.AppTheme4);
+                    break;
+                case "5":
+                    setTheme(R.style.AppTheme5);
+                    break;
+                case "6":
+                    setTheme(R.style.AppTheme6);
+                    break;
+                case "7":
+                    setTheme(R.style.AppTheme7);
+                    break;
+                case "8":
+                    setTheme(R.style.AppTheme8);
+                    break;
+                default:
+                    break;
+            }
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
         mTooblar = (Toolbar) findViewById(R.id.tl_custom);

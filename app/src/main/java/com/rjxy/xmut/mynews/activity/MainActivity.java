@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
         String theme = PrefUtils.getString(this, "theme", "");
         if (!"".equals(theme)) {
@@ -78,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initData();
         initFragment();
