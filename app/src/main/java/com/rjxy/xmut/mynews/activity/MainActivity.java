@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         String theme = PrefUtils.getString(this, "theme", "");
         if (!"".equals(theme)) {
-            switch (theme){
+            switch (theme) {
                 case "1":
                     setTheme(R.style.AppTheme1);
                     break;
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
         titleList.add("知乎热门");
         titleList.add("知乎主题");
-        titleList.add("娱乐");
+        titleList.add("饭否精选");
 
         tabLayout.setTabMode(TabLayout.MODE_FIXED);//tab的模式如果标签多的话用MODE_SCROLLABLE  少的话用MODE_FIXED
 
@@ -146,8 +146,9 @@ public class MainActivity extends AppCompatActivity {
                         Intent intent = new Intent();
                         intent.setClass(MainActivity.this, SettingActivity.class);
                         startActivity(intent);
-                        finish();
                         break;
+                    case R.id.nav_about:
+
                     default:
                         break;
                 }
@@ -163,10 +164,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar, menu);
-        final MenuItem item1 = menu.findItem(R.id.search);
-        MenuItem item2 = menu.findItem(R.id.share);
-        mSearchView = (SearchView) MenuItemCompat.getActionView(item1);
-        mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item2);
+        //final MenuItem item1 = menu.findItem(R.id.search);
+        //MenuItem item2 = menu.findItem(R.id.share);
+        // mSearchView = (SearchView) MenuItemCompat.getActionView(item1);
+        //mShareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item2);
         return true;
     }
 

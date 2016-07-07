@@ -15,7 +15,10 @@ public class API {
     public static final String LATEST_NEW = "http://news-at.zhihu.com/api/4/news/";
 
     //这是主题日报的API
-    public static final String THEME = "http://news-at.zhihu.com/api/4/themes";
+    public static final String THEME = "http://news-at.zhihu.com/api/4/theme/13";
     public static final String Themes_NEW = "http://news-at.zhihu.com/api/4/news/";
 
+    //饭否的api
+    public static final String FAFOU = "http://blog.fanfou.com/digest/json/index.json";
+    public static final String FAFOU_CONTENT = "http://blog.fanfou.com/digest/json/2016-07-07.daily.json";
 }

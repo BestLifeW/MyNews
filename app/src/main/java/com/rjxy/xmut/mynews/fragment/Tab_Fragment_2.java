@@ -1,19 +1,17 @@
 package com.rjxy.xmut.mynews.fragment;
 
+import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.os.Process;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.lidroid.xutils.HttpUtils;
@@ -38,15 +36,16 @@ public class Tab_Fragment_2 extends Fragment {
 
     private ThemesDomain themesDomain;
     private RecyclerView recyclerView;
-    private View viewTab_2;
+    private View view;
     public SwipeRefreshLayout mSwipeRefreshLayout;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        viewTab_2 = inflater.inflate(R.layout.fragment_content2, container, false);
+        view = inflater.inflate(R.layout.fragment_content2, container, false);
         initView();
         initInterData();
-        return viewTab_2;
+        return view;
     }
 
     private void initInterData() {
@@ -57,11 +56,41 @@ public class Tab_Fragment_2 extends Fragment {
                 String result = responseInfo.result;
                 ProcessResult(result);
                 //Log.i("News", themesDomain.getOthers().get(0).getDescription());
-                CacheUtils.setCache(API.LATEST, result, getActivity());
+                CacheUtils.setCache(API.THEME, result, getActivity());
             }
+
             @Override
             public void onFailure(HttpException error, String msg) {
-                // Toast.makeText(getActivity(),"网络连接失败，请检查网络",Toast.LENGTH_SHORT).show();
+
+                Snackbar.make(view, "哎呀，网络没连接上", Snackbar.LENGTH_SHORT)
+                        .setAction("去设置", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent wifiSettingsIntent = new Intent("android.settings.WIFI_SETTINGS");
+                                startActivity(wifiSettingsIntent);
+                            }
+                        })
+                        .show();
+                try {
+                    //获取Cache
+                    String cache = CacheUtils.getCache(API.THEME, getActivity());
+                    ProcessResult(cache);
+                    // Log.i("cache", "缓存里面的数据是:" + latestDomain.getStories().get(0).getTitle());
+                    recyclerView.setAdapter(new Fragment2_adapter(getActivity(), themesDomain));
+                    //iniInterData();
+                } catch (Exception e) {
+                    //Toast.makeText(getActivity(), "数据获取失败，请检查网络", Toast.LENGTH_SHORT).show();
+                } finally {
+                    Snackbar.make(view, "哎呀，网络没连接上", Snackbar.LENGTH_SHORT)
+                            .setAction("去设置", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent wifiSettingsIntent = new Intent("android.settings.WIFI_SETTINGS");
+                                    startActivity(wifiSettingsIntent);
+                                }
+                            })
+                            .show();
+                }
 
             }
         });
@@ -74,14 +103,14 @@ public class Tab_Fragment_2 extends Fragment {
     }
 
     private void initView() {
-        recyclerView = (RecyclerView) viewTab_2.findViewById(R.id.rl_fragment2);
+        recyclerView = (RecyclerView) view.findViewById(R.id.rl_fragment2);
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         int spacingInPixels = 20;
         recyclerView.addItemDecoration(new SpaceItemDecoration(spacingInPixels));
         manager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(manager);
         //设置下拉刷新
-        mSwipeRefreshLayout = (SwipeRefreshLayout) viewTab_2.findViewById(R.id.srl);
+        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.srl);
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {

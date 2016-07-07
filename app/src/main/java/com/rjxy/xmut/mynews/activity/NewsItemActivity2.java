@@ -2,9 +2,7 @@ package com.rjxy.xmut.mynews.activity;
 
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.os.Process;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
@@ -15,8 +13,6 @@ import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -35,7 +31,7 @@ import com.rjxy.xmut.mynews.domain.LatestNewsDomain;
 import com.rjxy.xmut.mynews.utilis.API;
 import com.rjxy.xmut.mynews.utilis.PrefUtils;
 
-public class NewsItemActivity extends AppCompatActivity {
+public class NewsItemActivity2 extends AppCompatActivity {
     private Toolbar mTooblar;
     private ImageView mItemImg;     //图片
     private TextView mItenmInfo;
@@ -52,18 +48,12 @@ public class NewsItemActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         changeThemes();
-
-        Window window = getWindow();
-        //window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS|WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
-        window.setStatusBarColor(Color.TRANSPARENT);
-        window.setNavigationBarColor(Color.TRANSPARENT);
-
-
         super.onCreate(savedInstanceState);
         bitmaputils = new BitmapUtils(getApplicationContext());
         setContentView(R.layout.activity_news_item);
         //获取新闻的ID；
         newsId = getIntent().getIntExtra("News", 0);
+        Log.i("test", "onCreate: "+newsId);
         //初始化控件
         initView();
         initInterData();
@@ -105,7 +95,6 @@ public class NewsItemActivity extends AppCompatActivity {
     * */
     private void fillData() {
         bitmaputils.display(mItemImg, latestNewsDomain.getImage());
-        Log.i("图片地址", "图片地址: "+latestNewsDomain.getImage()+"ID地址"+latestNewsDomain.getId());
         webViewRead.getSettings().setAppCacheEnabled(false);
         webViewRead.setOnKeyListener(new View.OnKeyListener() {
             @Override

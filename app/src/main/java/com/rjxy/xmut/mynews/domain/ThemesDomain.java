@@ -3,81 +3,119 @@ package com.rjxy.xmut.mynews.domain;
 import java.util.List;
 
 /**
- * Created by Administrator on 2016/7/4.
+ * Created by lovec on 2016/7/6.
  */
 public class ThemesDomain {
 
     /**
-     * limit : 1000
-     * subscribed : []
-     * others : [{"color":15007,"thumbnail":"http://pic3.zhimg.com/0e71e90fd6be47630399d63c58beebfc.jpg","description":"了解自己和别人，了解彼此的欲望和局限。","id":13,"name":"日常心理学"},{"color":8307764,"thumbnail":"http://pic4.zhimg.com/2c38a96e84b5cc8331a901920a87ea71.jpg","description":"内容由知乎用户推荐，海纳主题百万，趣味上天入地","id":12,"name":"用户推荐日报"},{"color":14483535,"thumbnail":"http://pic3.zhimg.com/00eba01080138a5ac861d581a64ff9bd.jpg","description":"除了经典和新片，我们还关注技术和产业","id":3,"name":"电影日报"},{"color":8307764,"thumbnail":"http://pic4.zhimg.com/4aa8400ba46d3d46e34a9836744ea232.jpg","description":"为你发现最有趣的新鲜事，建议在 WiFi 下查看","id":11,"name":"不许无聊"},{"color":62140,"thumbnail":"http://p1.zhimg.com/d3/7b/d37b38d5c82b4345ccd7e50c4ae997da.jpg","description":"好设计需要打磨和研习，我们分享灵感和路径","id":4,"name":"设计日报"},{"color":1615359,"thumbnail":"http://pic4.zhimg.com/aa94e197491fb9c44d384c4747773810.jpg","description":"商业世界变化越来越快，就是这些家伙干的","id":5,"name":"大公司日报"},{"color":16031744,"thumbnail":"http://pic2.zhimg.com/f2e97ff073e5cf9e79c7ed498727ebd6.jpg","description":"从业者推荐的财经金融资讯","id":6,"name":"财经日报"},{"color":9699556,"thumbnail":"http://pic2.zhimg.com/98d7b4f8169c596efb6ee8487a30c8ee.jpg","description":"把黑客知识科普到你的面前","id":10,"name":"互联网安全"},{"color":59647,"thumbnail":"http://pic3.zhimg.com/2f214a4ca51855670668530f7d333fd8.jpg","description":"如果你喜欢游戏，就从这里开始","id":2,"name":"开始游戏"},{"color":1564695,"thumbnail":"http://pic4.zhimg.com/eac535117ed895983bd2721f35d6e8dc.jpg","description":"有音乐就很好","id":7,"name":"音乐日报"},{"color":6123007,"thumbnail":"http://pic1.zhimg.com/a0f97c523c64e749c700b2ddc96cfd7c.jpg","description":"用技术的眼睛仔细看懂每一部动画和漫画","id":9,"name":"动漫日报"},{"color":16046124,"thumbnail":"http://pic1.zhimg.com/bcf7d594f126e5ceb22691be32b2650a.jpg","description":"关注体育，不吵架。","id":8,"name":"体育日报"}]
-     */
-
-    private int limit;
-    private List<?> subscribed;
-    /**
-     * color : 15007
-     * thumbnail : http://pic3.zhimg.com/0e71e90fd6be47630399d63c58beebfc.jpg
+     * stories : [{"type":0,"id":7483384,"title":"更多日常心理学，都在读读日报里"},{"type":0,"id":7097426,"title":"人们在虚拟生活中投入的精力是否对现实生活的人际关系有积极意义？"},{"images":["http://pic1.zhimg.com/56d1d1202077c7b5b0e48e3b7d3ebb60_t.jpg"],"type":0,"id":7101963,"title":"写给想成为心理咨询师的学生同仁"},{"type":0,"id":7086807,"title":"职人介绍所 ·  自闭儿童的解锁人"},{"images":["http://pic2.zhimg.com/afecdc04983a8e261326386995150599_t.jpg"],"type":0,"id":7066097,"title":"家庭的生命周期：关于「离家」"},{"images":["http://pic4.zhimg.com/1c4d1cd8edb7ed1e2045109c79870127_t.jpg"],"type":0,"id":7032789,"title":"艰难的孩子和孩子的艰难"},{"type":0,"id":7015707,"title":"家长该如何处理儿童的自慰行为？"},{"type":0,"id":7014561,"title":"从心理层面看，「婚外情」究竟是什么？"},{"type":0,"id":7014068,"title":"人类为什么需要仪式？"},{"type":0,"id":4856502,"title":"心理学从业者怎么看待近年来在国内心理咨询和治疗中十分流行的沙盘（箱庭）疗法？"},{"type":0,"id":4854969,"title":"为什么她总爱上同一类型的「渣」男？"},{"type":0,"id":4851024,"title":"国外幼教现状如何？"},{"images":["http://pic1.zhimg.com/c7cd4c64f429b79e6d269723bd7b10f0_t.jpg"],"type":0,"id":4827436,"title":"从日俄战争到神经科学的二次革命（多图）"},{"images":["http://pic1.zhimg.com/673f13f858f5fe6970104ba3319c33b8_t.jpg"],"type":0,"id":4820022,"title":"就这样面对爱人的糟糕情绪"},{"type":0,"id":4814564,"title":"意识、感知和注意力之间有怎样的关系？"},{"type":0,"id":4806764,"title":"小时候缺爱，成年后如何解决？"},{"type":0,"id":4802579,"title":"为什么得到了想要的，却不像想象中那样开心？"},{"type":0,"id":4738657,"title":"为什么很多老人都不喜欢使用家用电器？"},{"type":0,"id":4739134,"title":"心理咨询的时间为什么要控制在一小时左右？"},{"type":0,"id":4737612,"title":"我们应该如何正确对待特殊儿童？"}]
      * description : 了解自己和别人，了解彼此的欲望和局限。
-     * id : 13
+     * background : http://pic2.zhimg.com/71c8bcd3d99958de45ed87b8fc213224.jpg
+     * color : 15007
      * name : 日常心理学
+     * image : http://pic4.zhimg.com/60b69ef145a472f2c6b5302453f95eaa.jpg
+     * editors : [{"url":"http://www.zhihu.com/people/moheng-esther","bio":"树上的女爵","id":79,"avatar":"http://pic1.zhimg.com/0a6456810_m.jpg","name":"刘柯"}]
+     * image_source :
      */
 
-    private List<OthersBean> others;
+    private String description;
+    private String background;
+    private int color;
+    private String name;
+    private String image;
+    private String image_source;
+    /**
+     * type : 0
+     * id : 7483384
+     * title : 更多日常心理学，都在读读日报里
+     */
 
-    public int getLimit() {
-        return limit;
+    private List<StoriesBean> stories;
+    /**
+     * url : http://www.zhihu.com/people/moheng-esther
+     * bio : 树上的女爵
+     * id : 79
+     * avatar : http://pic1.zhimg.com/0a6456810_m.jpg
+     * name : 刘柯
+     */
+
+    private List<EditorsBean> editors;
+
+    public String getDescription() {
+        return description;
     }
 
-    public void setLimit(int limit) {
-        this.limit = limit;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public List<?> getSubscribed() {
-        return subscribed;
+    public String getBackground() {
+        return background;
     }
 
-    public void setSubscribed(List<?> subscribed) {
-        this.subscribed = subscribed;
+    public void setBackground(String background) {
+        this.background = background;
     }
 
-    public List<OthersBean> getOthers() {
-        return others;
+    public int getColor() {
+        return color;
     }
 
-    public void setOthers(List<OthersBean> others) {
-        this.others = others;
+    public void setColor(int color) {
+        this.color = color;
     }
 
-    public static class OthersBean {
-        private int color;
-        private String thumbnail;
-        private String description;
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public String getImage_source() {
+        return image_source;
+    }
+
+    public void setImage_source(String image_source) {
+        this.image_source = image_source;
+    }
+
+    public List<StoriesBean> getStories() {
+        return stories;
+    }
+
+    public void setStories(List<StoriesBean> stories) {
+        this.stories = stories;
+    }
+
+    public List<EditorsBean> getEditors() {
+        return editors;
+    }
+
+    public void setEditors(List<EditorsBean> editors) {
+        this.editors = editors;
+    }
+
+    public static class StoriesBean {
+        private int type;
         private int id;
-        private String name;
+        private String title;
 
-        public int getColor() {
-            return color;
+        public int getType() {
+            return type;
         }
 
-        public void setColor(int color) {
-            this.color = color;
-        }
-
-        public String getThumbnail() {
-            return thumbnail;
-        }
-
-        public void setThumbnail(String thumbnail) {
-            this.thumbnail = thumbnail;
-        }
-
-        public String getDescription() {
-            return description;
-        }
-
-        public void setDescription(String description) {
-            this.description = description;
+        public void setType(int type) {
+            this.type = type;
         }
 
         public int getId() {
@@ -86,6 +124,54 @@ public class ThemesDomain {
 
         public void setId(int id) {
             this.id = id;
+        }
+
+        public String getTitle() {
+            return title;
+        }
+
+        public void setTitle(String title) {
+            this.title = title;
+        }
+    }
+
+    public static class EditorsBean {
+        private String url;
+        private String bio;
+        private int id;
+        private String avatar;
+        private String name;
+
+        public String getUrl() {
+            return url;
+        }
+
+        public void setUrl(String url) {
+            this.url = url;
+        }
+
+        public String getBio() {
+            return bio;
+        }
+
+        public void setBio(String bio) {
+            this.bio = bio;
+        }
+
+        public int getId() {
+            return id;
+        }
+
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getAvatar() {
+            return avatar;
+        }
+
+        public void setAvatar(String avatar) {
+            this.avatar = avatar;
         }
 
         public String getName() {

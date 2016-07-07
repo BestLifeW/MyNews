@@ -8,6 +8,7 @@ import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.LoginFilter;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 
 import com.lidroid.xutils.BitmapUtils;
 import com.rjxy.xmut.mynews.R;
+import com.rjxy.xmut.mynews.activity.CircleImageView;
 import com.rjxy.xmut.mynews.activity.NewsItemActivity;
 import com.rjxy.xmut.mynews.domain.CollectionDomain;
 import com.rjxy.xmut.mynews.domain.LatestDomain;
@@ -42,7 +44,9 @@ public class Fragment1_adapter extends RecyclerView.Adapter<Fragment1_adapter.La
     @Override
     public LatestItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         bitmapUtils = new BitmapUtils(context);
-        View view = View.inflate(context, R.layout.recyclerview_item, null);
+        //View view = View.inflate(context, R.layout.recyclerview_item, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.recyclerview_item,
+                parent, false);
         LatestItemViewHolder holder = new LatestItemViewHolder(view);
         return holder;
     }
@@ -70,19 +74,17 @@ public class Fragment1_adapter extends RecyclerView.Adapter<Fragment1_adapter.La
     }
 
     public class LatestItemViewHolder extends RecyclerView.ViewHolder {
-        private ImageView NewsImg;
+        private CircleImageView NewsImg;
         private ImageView favorite;
         private TextView NewsTitle;
         private CardView cardView;
-        private RelativeLayout item_rl;
 
         public LatestItemViewHolder(View itemView) {
             super(itemView);
-            NewsImg = (ImageView) itemView.findViewById(R.id.iv_newsimg);
+            NewsImg = (CircleImageView) itemView.findViewById(R.id.iv_newsimg);
             NewsTitle = (TextView) itemView.findViewById(R.id.tv_newstitle);
             cardView = (CardView) itemView.findViewById(R.id.cardview);
            // favorite = (ImageView) itemView.findViewById(R.id.favorite);
-            item_rl = (RelativeLayout) itemView.findViewById(R.id.item_rl);
         }
     }
 }

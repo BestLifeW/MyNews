@@ -1,6 +1,8 @@
 package com.rjxy.xmut.mynews.fragment;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -40,7 +42,7 @@ public class Tab_Fragment_1 extends Fragment {
 
 
     public RecyclerView recyclerView;
-    public View  view;
+    public View view;
     public LatestDomain latestDomain;
     public SwipeRefreshLayout mSwipeRefreshLayout;
     public CardView cardView;
@@ -67,18 +69,35 @@ public class Tab_Fragment_1 extends Fragment {
 
             @Override
             public void onFailure(HttpException error, String msg) {
-                Snackbar.make(view,"请检查网络连接",Snackbar.LENGTH_LONG).show();
+
+                Snackbar.make(view, "哎呀，网络没连接上", Snackbar.LENGTH_SHORT)
+                        .setAction("去设置", new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                Intent wifiSettingsIntent = new Intent("android.settings.WIFI_SETTINGS");
+                                startActivity(wifiSettingsIntent);
+                            }
+                        })
+                        .show();
                 try {
                     //获取Cache
                     String cache = CacheUtils.getCache(API.LATEST, getActivity());
                     ProcessResult(cache);
-                    Log.i("cache", "缓存里面的数据是:"+latestDomain.getStories().get(0).getTitle());
+                   // Log.i("cache", "缓存里面的数据是:" + latestDomain.getStories().get(0).getTitle());
                     recyclerView.setAdapter(new Fragment1_adapter(getActivity(), latestDomain));
                     //iniInterData();
                 } catch (Exception e) {
                     //Toast.makeText(getActivity(), "数据获取失败，请检查网络", Toast.LENGTH_SHORT).show();
                 } finally {
-
+                    Snackbar.make(view, "哎呀，网络没连接上", Snackbar.LENGTH_SHORT)
+                            .setAction("去设置", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    Intent wifiSettingsIntent = new Intent("android.settings.WIFI_SETTINGS");
+                                    startActivity(wifiSettingsIntent);
+                                }
+                            })
+                            .show();
                 }
 
             }
@@ -100,12 +119,24 @@ public class Tab_Fragment_1 extends Fragment {
         recyclerView.setLayoutManager(manager);
         //设置下拉刷新
         mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.srl);
+        mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright, android.R.color.holo_green_light, android.R.color.holo_orange_light, android.R.color.holo_red_light);
+        //设置手指在屏幕上下拉多少距离开始刷新
+        mSwipeRefreshLayout.setDistanceToTriggerSync(300);
+        //设置下拉刷新按钮的背景颜色
+        mSwipeRefreshLayout.setProgressBackgroundColorSchemeColor(Color.WHITE);
+        //设置下拉刷新按钮的大小
+        mSwipeRefreshLayout.setSize(SwipeRefreshLayout.DEFAULT);
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                iniInterData();
-                recyclerView.setAdapter(new Fragment1_adapter(getActivity(), latestDomain));
-                mSwipeRefreshLayout.setRefreshing(false);
+                mSwipeRefreshLayout.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        iniInterData();
+                        recyclerView.setAdapter(new Fragment1_adapter(getActivity(), latestDomain));
+                        mSwipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 3000);
             }
         });
     }

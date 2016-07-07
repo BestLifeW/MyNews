@@ -17,7 +17,7 @@
     <com.makeramen.roundedimageview.RoundedImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:id="@+id/imageView1"
+        android:id="@+id/fafoutouxiang"
         android:src="@drawable/photo"
         android:scaleType="center"
         app:riv_corner_radius="30dip"
@@ -35,6 +35,6 @@
         android:layout_height="wrap_content"
         android:text="点击头像进行登录"
         android:layout_marginTop="15dp"
-        android:layout_below="@+id/imageView1"
+        android:layout_below="@+id/fafoutouxiang"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

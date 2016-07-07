@@ -156,7 +156,7 @@
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:id="@+id/imageView1"
+                android:id="@+id/fafoutouxiang"
                 android:src="@drawable/dagou"
                 android:visibility="invisible"
                 android:layout_marginRight="5dp"

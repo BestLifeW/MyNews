@@ -1,7 +1,6 @@
 package com.rjxy.xmut.mynews.activity;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -62,7 +61,7 @@ public class SettingActivity extends AppCompatActivity {
         if (!"".equals(theme)) {
             switch (theme) {
                 case "1":
-                    findViewById(R.id.imageView1).setVisibility(View.VISIBLE);
+                    findViewById(R.id.fafoutouxiang).setVisibility(View.VISIBLE);
                     break;
                 case "2":
                     findViewById(R.id.imageView2).setVisibility(View.VISIBLE);
@@ -103,7 +102,7 @@ public class SettingActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        findViewById(R.id.imageView1).setVisibility(View.INVISIBLE);
+        findViewById(R.id.fafoutouxiang).setVisibility(View.INVISIBLE);
         findViewById(R.id.imageView2).setVisibility(View.INVISIBLE);
         findViewById(R.id.imageView3).setVisibility(View.INVISIBLE);
         findViewById(R.id.imageView4).setVisibility(View.INVISIBLE);
@@ -114,7 +113,7 @@ public class SettingActivity extends AppCompatActivity {
         String str = "";
         switch (view.getId()) {
             case R.id.color1:
-                findViewById(R.id.imageView1).setVisibility(View.VISIBLE);
+                findViewById(R.id.fafoutouxiang).setVisibility(View.VISIBLE);
                 RoundedImageView roundedImageView = (RoundedImageView) view;
                 str = "1";
 

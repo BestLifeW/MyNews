@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
@@ -12,7 +13,7 @@ import android.widget.TextView;
 
 import com.lidroid.xutils.BitmapUtils;
 import com.rjxy.xmut.mynews.R;
-import com.rjxy.xmut.mynews.activity.NewsItemActivity;
+import com.rjxy.xmut.mynews.activity.NewsItemActivity2;
 import com.rjxy.xmut.mynews.domain.LatestDomain;
 import com.rjxy.xmut.mynews.domain.ThemesDomain;
 
@@ -30,10 +31,12 @@ public class Fragment2_adapter extends RecyclerView.Adapter<Fragment2_adapter.Th
         this.themesDomain = themesDomain;
     }
 
+
     @Override
     public ThemesItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         bitmapUtils = new BitmapUtils(context);
-        View view = View.inflate(context, R.layout.recyclerview_item, null);
+        View view = LayoutInflater.from(context).inflate(R.layout.recyclerview_item,
+                parent, false);
         ThemesItemViewHolder Holder = new ThemesItemViewHolder(view);
         return Holder;
     }
@@ -41,25 +44,25 @@ public class Fragment2_adapter extends RecyclerView.Adapter<Fragment2_adapter.Th
     @Override
     public void onBindViewHolder(ThemesItemViewHolder holder, final int position) {
         final int i = position;
-        String imgUrl = themesDomain.getOthers().get(position).getThumbnail();
-        holder.NewsTitle.setText(themesDomain.getOthers().get(position).getDescription());
-        bitmapUtils.display(holder.NewsImg, imgUrl);
+        //String imgUrl = themesDomain.getEditors().get(position).getAvatar();
+        holder.NewsTitle.setText(themesDomain.getStories().get(position).getTitle());
+        //bitmapUtils.display(holder.NewsImg, imgUrl);
         //设置点击时间
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, NewsItemActivity.class);
-                intent.putExtra("News", themesDomain.getOthers().get(position).getId());
+                Intent intent = new Intent(context, NewsItemActivity2.class);
+                intent.putExtra("News", themesDomain.getStories().get(position).getId());
                 context.startActivity(intent);
 
             }
         });
-        Log.i("imgUrl", "onBindViewHolder: " + imgUrl);
+        // Log.i("imgUrl", "onBindViewHolder: " + imgUrl);
     }
 
     @Override
     public int getItemCount() {
-        return themesDomain.getOthers().size();
+        return themesDomain.getStories().size();
     }
 
     public class ThemesItemViewHolder extends RecyclerView.ViewHolder {
