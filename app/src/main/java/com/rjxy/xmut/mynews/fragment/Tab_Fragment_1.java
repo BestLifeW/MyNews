@@ -31,7 +31,6 @@ import com.rjxy.xmut.mynews.Adatper.Fragment1_adapter;
 import com.rjxy.xmut.mynews.R;
 import com.rjxy.xmut.mynews.activity.WelcomeActivity;
 import com.rjxy.xmut.mynews.domain.LatestDomain;
-import com.rjxy.xmut.mynews.ui.SlideShowView;
 import com.rjxy.xmut.mynews.utilis.API;
 import com.rjxy.xmut.mynews.utilis.CacheUtils;
 
@@ -114,15 +113,6 @@ public class Tab_Fragment_1 extends Fragment {
     private void initView(LayoutInflater inflater) {
         recyclerView = (RecyclerView) view.findViewById(R.id.rl_fragment1);
 
-//        SlideShowView mSlideShowView=(SlideShowView)view.findViewById(R.id.slideshowView);
-//        String[] imageUris = new String[] { "http://pic3.zhimg.com/c65fb4acdc80529ff0ac6ef9f533637e.jpgID",
-//                "http://pic3.zhimg.com/c65fb4acdc80529ff0ac6ef9f533637e.jpgID",
-//                "http://pic3.zhimg.com/c65fb4acdc80529ff0ac6ef9f533637e.jpgID",
-//                "http://pic3.zhimg.com/c65fb4acdc80529ff0ac6ef9f533637e.jpgID",
-//                "http://pic3.zhimg.com/c65fb4acdc80529ff0ac6ef9f533637e.jpgID",
-//                "http://pic3.zhimg.com/c65fb4acdc80529ff0ac6ef9f533637e.jpgID"
-//        };
-//        mSlideShowView.setImageUrls(imageUris);
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         int spacingInPixels = 20;
         recyclerView.addItemDecoration(new SpaceItemDecoration(spacingInPixels));
